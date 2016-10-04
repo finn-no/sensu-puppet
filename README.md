@@ -1,3 +1,5 @@
+NOTE: This is a fork intended to simply restore the file permissions from tag 1.5.5 to master branch, since the puppet-sensu-men fscked up their own module to support Windows.
+
 # Sensu-Puppet
 
 Installs and manages the open source monitoring framework [Sensu](http://sensuapp.org).
