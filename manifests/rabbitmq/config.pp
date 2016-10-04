@@ -30,10 +30,10 @@ class sensu::rabbitmq::config {
     if $sensu::rabbitmq_ssl_cert_chain and $sensu::rabbitmq_ssl_cert_chain =~ /^puppet:\/\// {
       file { "${ssl_dir}/cert.pem":
         ensure  => file,
-        source  => $sensu::rabbitmq_ssl_cert_chain,
-        owner   => $sensu::user,
-        group   => $sensu::group,
-        mode    => '0444',
+        source  => $::sensu::rabbitmq_ssl_cert_chain,
+        owner   => $::sensu::rabbitmq_ssl_cert_user,
+        group   => $::sensu::rabbitmq_ssl_cert_group,
+        mode    => $::sensu::rabbitmq_ssl_cert_filemode,
         require => File[$ssl_dir],
         before  => Sensu_rabbitmq_config[$::fqdn],
       }
@@ -44,10 +44,10 @@ class sensu::rabbitmq::config {
     } elsif $sensu::rabbitmq_ssl_cert_chain and  $sensu::rabbitmq_ssl_cert_chain =~ /BEGIN CERTIFICATE/ {
       file { "${ssl_dir}/cert.pem":
         ensure  => file,
-        content => $sensu::rabbitmq_ssl_cert_chain,
-        owner   => $sensu::user,
-        group   => $sensu::group,
-        mode    => '0444',
+        content => $::sensu::rabbitmq_ssl_cert_chain,
+        owner   => $::sensu::rabbitmq_ssl_cert_user,
+        group   => $::sensu::rabbitmq_ssl_cert_group,
+        mode    => $::sensu::rabbitmq_ssl_cert_filemode,
         require => File[$ssl_dir],
         before  => Sensu_rabbitmq_config[$::fqdn],
       }
@@ -64,10 +64,10 @@ class sensu::rabbitmq::config {
     if $sensu::rabbitmq_ssl_private_key and $sensu::rabbitmq_ssl_private_key =~ /^puppet:\/\// {
       file { "${ssl_dir}/key.pem":
         ensure  => file,
-        source  => $sensu::rabbitmq_ssl_private_key,
-        owner   => $sensu::user,
-        group   => $sensu::group,
-        mode    => '0440',
+        source  => $::sensu::rabbitmq_ssl_private_key,
+        owner   => $::sensu::rabbitmq_ssl_key_user,
+        group   => $::sensu::rabbitmq_ssl_key_group,
+        mode    => $::sensu::rabbitmq_ssl_key_filemode,
         require => File[$ssl_dir],
         before  => Sensu_rabbitmq_config[$::fqdn],
       }
@@ -78,10 +78,10 @@ class sensu::rabbitmq::config {
     } elsif $sensu::rabbitmq_ssl_private_key and $sensu::rabbitmq_ssl_private_key =~ /BEGIN RSA PRIVATE KEY/ {
       file { "${ssl_dir}/key.pem":
         ensure  => file,
-        content => $sensu::rabbitmq_ssl_private_key,
-        owner   => $sensu::user,
-        group   => $sensu::group,
-        mode    => '0440',
+        content => $::sensu::rabbitmq_ssl_private_key,
+        owner   => $::sensu::rabbitmq_ssl_key_user,
+        group   => $::sensu::rabbitmq_ssl_key_group,
+        mode    => $::sensu::rabbitmq_ssl_key_filemode,
         require => File[$ssl_dir],
         before  => Sensu_rabbitmq_config[$::fqdn],
       }
