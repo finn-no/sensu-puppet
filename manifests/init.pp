@@ -526,10 +526,10 @@ class sensu (
     'Debian','RedHat': {
       $etc_dir = '/etc/sensu'
       $conf_dir = "${etc_dir}/conf.d"
-      $user = 'sensu'
-      $group = 'sensu'
-      $dir_mode = '0555'
-      $file_mode = '0440'
+      $user = 'finn'
+      $group = 'finn'
+      $dir_mode = '0777'
+      $file_mode = '0444'
     }
 
     'windows': {
