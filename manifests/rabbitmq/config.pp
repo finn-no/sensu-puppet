@@ -67,7 +67,7 @@ class sensu::rabbitmq::config {
         source  => $sensu::rabbitmq_ssl_private_key,
         owner   => $sensu::user,
         group   => $sensu::group,
-        mode    => $sensu::file_mode,
+        mode    => '0440',
         require => File[$ssl_dir],
         before  => Sensu_rabbitmq_config[$::fqdn],
       }
@@ -81,7 +81,7 @@ class sensu::rabbitmq::config {
         content => $sensu::rabbitmq_ssl_private_key,
         owner   => $sensu::user,
         group   => $sensu::group,
-        mode    => $sensu::file_mode,
+        mode    => '0440',
         require => File[$ssl_dir],
         before  => Sensu_rabbitmq_config[$::fqdn],
       }
