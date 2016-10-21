@@ -532,7 +532,7 @@ class sensu (
       $conf_dir = "${etc_dir}/conf.d"
       $user = 'sensu'
       $group = 'sensu'
-      $dir_mode = '0755'
+      $dir_mode = '0775'
       $file_mode = '0644'
     }
 
