@@ -54,7 +54,11 @@
 # [*repo_source*]
 #   String.  Location of the yum/apt repo.  Overrides the default location
 #   Default: undef
-
+#
+# [*repo_release*]
+#   String.  The distro codename. Overrides the default distro codename
+#   Default: undef
+#
 # [*repo_key_id*]
 #   String.  The apt GPG key id
 #   Default: EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB
@@ -346,6 +350,7 @@ class sensu (
   $manage_repo                    = true,
   $repo                           = 'main',
   $repo_source                    = undef,
+  $repo_release                   = undef,
   $repo_key_id                    = 'EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB',
   $repo_key_source                = 'http://repositories.sensuapp.org/apt/pubkey.gpg',
   $enterprise_repo_key_id         = '910442FF8781AFD0995D14B311AB27E8C3FE3269',

@@ -20,13 +20,19 @@ class sensu::repo::apt {
     if $sensu::repo_source {
       $url = $sensu::repo_source
     } else {
-      $url = 'http://repositories.sensuapp.org/apt'
+      $url = 'https://sensu.global.ssl.fastly.net/apt'
+    }
+
+    if $::sensu::repo_release == undef { #lint:ignore:undef_in_function
+      $release = $::lsbdistcodename
+    } else {
+      $release = $::sensu::repo_release
     }
 
     apt::source { 'sensu':
       ensure   => $ensure,
       location => $url,
-      release  => 'sensu',
+      release  => $release,
       repos    => $sensu::repo,
       include  => {
         'src' => false,
