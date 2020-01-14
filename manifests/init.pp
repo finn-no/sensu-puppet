@@ -15,7 +15,7 @@
 #   Default: sensu-plugin
 #
 # [*sensu_plugin_provider*]
-#   String.  Provider used to install the sensu-plugin package. Refers to the 
+#   String.  Provider used to install the sensu-plugin package. Refers to the
 #   sensu-plugin rubygem, not the sensu-plugins community scripts
 #   Default: undef
 #   Valid values: sensu_gem, apt, aptitude, yum
@@ -65,7 +65,7 @@
 #
 # [*repo_key_source*]
 #   String.  URL of the apt GPG key
-#   Default: http://repositories.sensuapp.org/apt/pubkey.gpg
+#   Default: http://eol-eol-repositories.sensuapp.org/apt/pubkey.gpg
 #
 # [*client*]
 #   Boolean.  Include the sensu client
@@ -352,7 +352,7 @@ class sensu (
   $repo_source                    = undef,
   $repo_release                   = undef,
   $repo_key_id                    = 'EE15CFF6AB6E4E290FDAB681A20F259AEB9C94BB',
-  $repo_key_source                = 'http://repositories.sensuapp.org/apt/pubkey.gpg',
+  $repo_key_source                = 'http://eol-eol-repositories.sensuapp.org/apt/pubkey.gpg',
   $enterprise_repo_key_id         = '910442FF8781AFD0995D14B311AB27E8C3FE3269',
   $client                         = true,
   $server                         = false,

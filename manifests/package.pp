@@ -50,7 +50,7 @@ class sensu::package {
 
       remote_file { $pkg_source:
         ensure   => present,
-        source   => "http://repositories.sensuapp.org/msi/sensu-${pkg_version}.msi",
+        source   => "http://eol-repositories.sensuapp.org/msi/sensu-${pkg_version}.msi",
         checksum => $::sensu::package_checksum,
       }
     }
