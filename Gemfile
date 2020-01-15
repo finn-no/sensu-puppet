@@ -2,6 +2,7 @@ source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
 if RUBY_VERSION >= '1.8.7' and RUBY_VERSION < '1.9'
   gem 'rspec', '~> 2.0'
+  gem 'metadata-json-lint', '< 1.1'
 end
 
 group :development, :unit_tests do
