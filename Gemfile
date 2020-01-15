@@ -1,8 +1,10 @@
 source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-if RUBY_VERSION >= '1.8.7' and RUBY_VERSION < '1.9'
+if RUBY_VERSION >= '1.8.7' and RUBY_VERSION <= '1.9.3'
   gem 'rspec', '~> 2.0'
   gem 'metadata-json-lint', '< 1.1'
+else
+  gem 'metadata-json-lint',                               :require => false
 end
 
 group :development, :unit_tests do
@@ -13,7 +15,6 @@ group :development, :unit_tests do
   gem 'json', "~> 1.8.3",                                 :require => false
   gem 'json_pure', "~> 1.8.3",                            :require => false
   gem 'puppet-syntax',                                    :require => false
-  gem 'metadata-json-lint',                               :require => false
   gem 'puppet-blacksmith',                                :require => false
   gem 'rest-client', "1.6.8",                             :require => false
   gem 'puppet-lint-absolute_classname-check',             :require => false
