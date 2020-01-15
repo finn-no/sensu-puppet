@@ -1,7 +1,6 @@
 fixtures:
   repositories:
     apt: git://github.com/puppetlabs/puppetlabs-apt.git
-    ref: cd413ee3930368785afc5af3c19347e74f7d99ac
     stdlib: git://github.com/puppetlabs/puppetlabs-stdlib.git
     remote_file: git://github.com/lwf/puppet-remote_file.git
   symlinks:
